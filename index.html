@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Dental Hospital - Patient Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hope Dental Hospital - Patient Management</h1>
+
+        <!-- Patient Form to Add Patients -->
+        <div class="form-section">
+            <input type="text" id="patientName" placeholder="Enter patient name" required>
+            <input type="text" id="doctorName" placeholder="Enter doctor's name" required>
+            <button onclick="addPatient()">Add to Queue</button>
+        </div>
+
+        <!-- Search Box -->
+        <div class="queue-section">
+            <h2>Current Queue</h2>
+            <input type="text" id="searchBox" placeholder="Search for a patient..." onkeyup="filterPatients()">
+
+            <!-- Queue Table -->
+            <table id="patientQueueTable">
+                <thead>
+                    <tr>
+                        <th>Patient No.</th>
+                        <th>Patient Name</th>
+                        <th>Doctor's Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="patientQueue">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal for Patient Card -->
+        <div id="patientCardModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePatientCard()">&times;</span>
+                <h2>Patient Card</h2>
+
+                <h3 id="modalPatientName"></h3>
+                <h4>Doctor: <span id="modalDoctorName"></span></h4>
+
+                <!-- Biography Section -->
+                <h4>Biography:</h4>
+                <textarea id="patientBiography" placeholder="Patient biography..."></textarea>
+
+                <!-- Investigation Section -->
+                <h4>Investigations:</h4>
+                <textarea id="investigations" placeholder="Investigations performed..."></textarea>
+
+                <!-- Findings Section -->
+                <h4>Findings:</h4>
+                <textarea id="findings" placeholder="Findings from investigations..."></textarea>
+
+                <!-- Treatment Plan Section -->
+                <h4>Treatment Plan:</h4>
+                <textarea id="treatmentPlan" placeholder="Planned treatments..."></textarea>
+
+                <!-- Treatment Done Section -->
+                <h4>Treatment Done:</h4>
+                <textarea id="treatmentDone" placeholder="Treatments completed..."></textarea>
+
+                <!-- TCA Section -->
+                <h4>Treatment Completion Acknowledgment:</h4>
+                <textarea id="treatmentCompletion" placeholder="Treatment completion notes..."></textarea>
+
+                <button id="saveButton">Save</button>
+
+                <!-- Treatment History -->
+                <h4>Treatment History:</h4>
+                <ul id="treatmentHistory"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
